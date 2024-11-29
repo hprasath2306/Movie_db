@@ -12,7 +12,8 @@ export async function loader({ params }: LoaderFunctionArgs) {
       },
     }
   );
-  return Response.json(await url.json());
+  const movie = await url.json()
+  return movie;
 }
 
 export default function MovieDetails() {

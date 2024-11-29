@@ -1,8 +1,8 @@
 import {
-  json,
   type LoaderFunctionArgs,
   type MetaFunction,
 } from "@remix-run/node";
+import { json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
@@ -23,7 +23,8 @@ export async function loader({}: LoaderFunctionArgs) {
       },
     }
   );
-  return Response.json(await url.json());
+  const movies = await url.json()
+  return movies;
 }
 
 export default function Index() {

@@ -16,7 +16,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
       createdAt: "desc",
     },
   });
-  return Response.json({ data });
+  return data;
 }
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -28,12 +28,12 @@ export async function action({ request }: ActionFunctionArgs) {
     },
   });
 
-  return Response.json({ data });
+  return data
 }
 
 export default function Comments() {
   const { id } = useParams();
-  const { data } = useLoaderData<typeof loader>();
+  const data = useLoaderData<typeof loader>();
   const navigation = useNavigation();
   return (
     <div className="rounded-lg border p-3">
