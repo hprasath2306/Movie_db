@@ -12,7 +12,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
       },
     }
   );
-  const movie = await url.json()
+  const movie = await url.json();
   return movie;
 }
 
